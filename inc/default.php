@@ -9,7 +9,7 @@ if ( file_exists( sys_get_temp_dir() . '/staging-restrictions.php' ) ) {
 
 function seo_warning() {
 	if( get_option( 'blog_public' ) ) return;
-	
+
 	$message = __( 'You are blocking access to robots. You must go to your <a href="%s">Reading</a> settings and uncheck the box for Search Engine Visibility.', 'base' );
 
 	echo '<div class="error"><p>';
@@ -31,12 +31,12 @@ add_action( 'themecheck_checks_loaded', 'theme_disable_cheks' );
 
 add_theme_support( 'automatic-feed-links' );
 
-/* Custom logo support. Uncomment or delete on production
+/* Custom logo support. Uncomment or delete on production */
 function theme_add_logo_support() {
 	add_theme_support( 'custom-logo' );
 }
 add_action( 'after_setup_theme', 'theme_add_logo_support' );
-*/
+
 
 if ( !isset( $content_width ) ) {
 	$content_width = 900;
@@ -141,7 +141,7 @@ add_action( 'save_post_page', 'theme_page_comment_status', 10, 3 );
 //custom excerpt
 function theme_the_excerpt() {
 	global $post;
-	
+
 	if ( trim( $post->post_excerpt ) ) {
 		the_excerpt();
 	} elseif ( strpos( $post->post_content, '<!--more-->' ) !== false ) {
@@ -216,7 +216,7 @@ add_action( 'admin_init',
 			function () {},
 			'reading'
 		);
-	
+
 		add_settings_field(
 			'eg_setting_name',
 			__( 'Type', 'base' ),
@@ -224,7 +224,7 @@ add_action( 'admin_init',
 			'reading',
 			'eg_setting_section'
 		);
-	
+
 		register_setting( 'reading', 'eg_date_archive_link_type' );
 	}
 );
@@ -253,16 +253,12 @@ function get_date_archive_link(){
 	}
 	return $res;
 }
- 
+
 function defer_js( $tag, $handle, $src ){
 	if( ! is_admin() )
 		$tag = str_replace( ' src=', ' defer src=', $tag );
-		
+
 	return $tag;
 }
 # commented block below, because there may be errors with js, if need you can uncomment this block
 // add_filter( 'script_loader_tag', 'defer_js', 99, 3 );
-
-
-
-

@@ -10,6 +10,10 @@ body {
   margin: 0;
 }
 
+body.admin-bar {
+  padding-top: 32px;
+}
+
 article,
 aside,
 footer,
@@ -2249,6 +2253,10 @@ button {
   top: 0;
   width: 100%;
   z-index: 10;
+}
+
+body.admin-bar.main-page header {
+  top: 32px;
 }
 
 @media (max-width: 1023px) {
@@ -6187,4 +6195,14 @@ html.fp-enabled,
   line-height: 1.3;
   color: #867169;
   margin-top: 20px;
+}
+
+.navbar-brand img.hidden-xs-down {
+  max-width: 156px;
+  height: auto;
+
+}
+.navbar-brand img.hidden-sm-up {
+  max-width: 41px;
+  height: auto;
 }

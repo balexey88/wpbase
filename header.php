@@ -25,10 +25,31 @@
 									<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 											<span class="navbar-toggler-icon">toggle menu</span>
 									</button>
-									<a class="navbar-brand" href="/">
-											 <img class="hidden-xs-down"  src="https://api.fnkr.net/testimg/156x37/FFF/00CED1/?text=Logo big">
-											<img class="hidden-sm-up"  src="https://api.fnkr.net/testimg/41x32/FFF/00CED1/?text=Logo small">
+									<a class="navbar-brand" href="<?=home_url('/');?>">
+											<?php
+											$custom_logo_id = get_theme_mod( 'custom_logo' );
+											$src = wp_get_attachment_image_src($custom_logo_id, 'logo-sm');
+
+											 if ( is_array($src) ) {
+												 printf( '<img src="%s" width="%s" height="%s" class="hidden-sm-up">', $src[0], $src[1], $src[2]);
+											 }
+
+											$src = wp_get_attachment_image_src($custom_logo_id, 'logo-xs');
+
+											 if ( is_array($src) ) {
+												 printf( '<img src="%s" width="%s" height="%s" class="hidden-xs-down">', $src[0], $src[1], $src[2]);
+
+											 }
+											// the_custom_logo();
+											?>
+
 									</a>
+									<?php
+									wp_nav_menu([
+										'theme-location' => 'primary'
+									]);
+									 ?>
+<?php /*
 									<div class="collapse navbar-collapse" id="navbarSupportedContent">
 											<ul class="navbar-nav">
 													<li class="nav-item active">
@@ -42,6 +63,7 @@
 													</li>
 											</ul>
 									</div>
+									*/?>
 									<div class="btn-wrapper">
 											<a href="#letter" class="btn btn-outline-inverse btn-contact btn-contact-main">
 													<svg class="icon icon-plane icon-plane" width="1em" height="1em">
