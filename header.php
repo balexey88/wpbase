@@ -46,28 +46,19 @@
 									</a>
 									<?php
 									wp_nav_menu([
-										'theme-location' => 'primary'
+										'theme-location' => 'primary',
+										'container_class' => 'collapse navbar-collapse',
+										'container_id' => 'navbarSupportedContent',
+										'items_wrap'   => '<ul id="%1$s" class="navbar-nav %2$s">%3$s</ul>',
+										// 'walker'         => new Custom_Walker_Nav_Menu,
+
 									]);
 									 ?>
-<?php /*
-									<div class="collapse navbar-collapse" id="navbarSupportedContent">
-											<ul class="navbar-nav">
-													<li class="nav-item active">
-															<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-													</li>
-													<li class="nav-item">
-															<a class="nav-link" href="/case_studies.html">Case studies</a>
-													</li>
-													<li class="nav-item">
-															<a class="nav-link" href="/team.html">Team</a>
-													</li>
-											</ul>
-									</div>
-									*/?>
+
 									<div class="btn-wrapper">
 											<a href="#letter" class="btn btn-outline-inverse btn-contact btn-contact-main">
 													<svg class="icon icon-plane icon-plane" width="1em" height="1em">
-															<use xlink:href="static/images/svg-symbols.svg#plane" width="100%" height="100%"></use>
+															<use xlink:href="<?=get_template_directory_uri();?>/images/svg-symbols.svg#plane" width="100%" height="100%"></use>
 													</svg>
 													<span>Contact us</span>
 											</a>
@@ -77,29 +68,8 @@
 			</header>
 			<!-- /header -->
 
-			<?php if( is_front_page() ): ?>
-			<h1><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else: ?>
-			<strong><a href="<?php echo home_url(); ?>"><?php bloginfo( 'name' ); ?></a></strong>
-			<?php endif; ?>
+			<main class="main">
 
-			<?php /* Custom logo support. Uncomment or delete on production
-			<?php if ( function_exists( 'the_custom_logo' ) ) : ?>
-				<div class="logo">
-				 <?php the_custom_logo(); ?>
-				</div>
-			<?php endif; ?>
-			*/ ?>
-
-			<p><q><?php bloginfo( 'description' ); ?></q></p>
-
-			<?php if( has_nav_menu( 'primary' ) )
-					wp_nav_menu( array(
-						'container' => false,
-						'theme_location' => 'primary',
-						'menu_id'        => 'navigation',
-						'menu_class'     => 'navigation',
-						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-						'walker'         => new Custom_Walker_Nav_Menu
-						)
-					); ?>
+				<?php if ( is_front_page() ) : ?>
+					<div class="fullpage">
+				<?php endif; ?>

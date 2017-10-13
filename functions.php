@@ -26,3 +26,6 @@ include( get_template_directory() . '/inc/menus.php' );
 
 // Theme css & js
 include( get_template_directory() . '/inc/scripts.php' );
+
+// Theme options
+include( get_template_directory() . '/inc/options.php' );
