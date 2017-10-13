@@ -1,3 +1,28 @@
+<div class="section slide-five">
+		<!-- box-letter form -->
+		<div class="box-letter" id="letter">
+				<div class="container">
+						<div class="headings">
+								<h1 class="box-subtitle">Discuss your project with us</h1>
+						</div>
+						<div class="text-cta text-center">
+								<p class="">To get a free quote and discuss your project fill in the form</p>
+						</div>
+						<div class="contactus-form">
+								<div class="letter">
+										<div class="stamp"></div>
+										<div class="contactus-form-inner">
+											<?php
+											echo do_shortcode('[contact-form-7 id="21" title="Contact form 1"]');
+											?>
+										</div>
+								</div>
+						</div>
+				</div>
+		</div>
+		<!-- /box-letter form -->
+</div>
+
 				<div class="section fp-auto-height">
 						<!-- footer -->
 						<footer class="footer">

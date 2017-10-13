@@ -29,3 +29,6 @@ include( get_template_directory() . '/inc/scripts.php' );
 
 // Theme options
 include( get_template_directory() . '/inc/options.php' );
+
+// Theme options
+include( get_template_directory() . '/inc/shortcodes.php' );
