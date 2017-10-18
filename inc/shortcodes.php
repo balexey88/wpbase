@@ -105,8 +105,12 @@ while ( $query->have_posts() ) {
                                       </div>
                                   </div>
                                   <div class="testimonial-photo">
-
-                                      <img src="https://api.fnkr.net/testimg/160x160/F4F4F4/FFF/?text=img+placeholder">
+                                    <?php
+                                    $image = get_post_meta(get_the_ID() , '_thumbnail_id', true);
+                                    
+                                    $src = wp_get_attachment_image_src($image);
+                                    ?>
+                                      <img src="<?=$src[0];?>">
                                   </div>
                               </div>
                           </div>
